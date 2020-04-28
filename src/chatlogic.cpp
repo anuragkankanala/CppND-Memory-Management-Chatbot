@@ -36,7 +36,7 @@ ChatLogic::~ChatLogic()
     //delete _chatBot;
 
     // delete all nodes
-    _nodes.clear();
+    //_nodes.clear();
 
     // delete all edges
     //_edges.clear();
