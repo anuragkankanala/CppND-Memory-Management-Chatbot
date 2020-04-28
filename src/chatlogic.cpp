@@ -39,7 +39,7 @@ ChatLogic::~ChatLogic()
     _nodes.clear();
 
     // delete all edges
-    _edges.clear();
+    //_edges.clear();
 
     ////
     //// EOF STUDENT CODE
@@ -164,8 +164,9 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
 
                             // store reference in child node and parent node
                             (*childNode)->AddEdgeToParentNode(edge.get());
-                            (*parentNode)->AddEdgeToChildNode(edge.get());
-                            _edges.emplace_back(std::move(edge));
+
+                            //Transferring ownership to node.
+                            (*parentNode)->AddEdgeToChildNode(edge);
                         }
 
                         ////
